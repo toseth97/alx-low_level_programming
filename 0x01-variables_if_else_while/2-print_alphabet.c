@@ -15,8 +15,11 @@ int main(void)
 	for (small = 'a'; small <= 'z'; small++)		
 	{
 	       	putchar(small);
-	    	printf("\n");
+	    	
 	}
+
+		
+	printf("\n");
 
 	return (0);
 }
