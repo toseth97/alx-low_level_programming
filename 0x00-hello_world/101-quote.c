@@ -11,6 +11,6 @@
 
 int main(void)
 {
-	fwrite("[err]:and that piece of art is useful\" - Dora Korpar, 2015-10-19", 59, 1, stderr);
+	fwrite(STDOUT_FILENO,"and that piece of art is useful\" - Dora Korpar, 2015-10-19", 59);
 	return (1);
 }
