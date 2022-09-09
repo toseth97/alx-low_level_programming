@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <unistd.h>
 #include <stdio.h>
 
 /**
@@ -10,6 +11,6 @@
 
 int main(void)
 {
-	fwrite(stderr, "and that piece of art is useful\" - Dora Korpar, 2015-10-19");
+	fwrite("and that piece of art is useful\" - Dora Korpar, 2015-10-19", 61 , 1 , stderr);
 	return (1);
 }
