@@ -11,8 +11,11 @@
 int main(void)
 {
 	char small;
+
 	for (small = 'a'; small <= 'z'; small++)
-		putchar(small);
-		putchar('\n');
+		{
+			putchar(small);
+			putchar('\n');
+		}
 	return (0);
 }
