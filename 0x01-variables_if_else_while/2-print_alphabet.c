@@ -13,8 +13,10 @@ int main(void)
 	char small;
 
 	for (small = 'a'; small <= 'z'; small++)		
-	    putchar(small);
-	    printf("\n");
+	{
+	       	putchar(small);
+	    	printf("\n");
+	}
 
 	return (0);
 }
