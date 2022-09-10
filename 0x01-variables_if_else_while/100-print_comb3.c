@@ -9,17 +9,24 @@
 
 int main(void)
 {
-	int d;
+	int d, e;
 
-	for (d = 0 ; d < 100; d++)
+	for (d = 48 ; d < 56; d++)
 	{
-		putchar((d/10) + '0');
-		putchar((d%10) + '0');
-
-		if (d != 99)
+		for (e = 49; e < 57; e++)
 		{
-			putchar(',');
-			putchar(' ');
+			if (e > d)
+			{
+				putchar(d);
+				putchar(e);
+
+				if ( d != 56 || e != 57)
+				{
+					putchar(',');
+					putcha(' ');
+				}
+			}
+
 		}
 	}
 
