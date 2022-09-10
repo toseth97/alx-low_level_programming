@@ -23,7 +23,7 @@ int main(void)
 				if ( d != 56 || e != 57)
 				{
 					putchar(',');
-					putcha(' ');
+					putchar(' ');
 				}
 			}
 
