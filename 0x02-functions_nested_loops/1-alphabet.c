@@ -1,3 +1,4 @@
+#include "_putchar.h"
 
 /**
  * main - It ususes the _pputchar to print out.
