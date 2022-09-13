@@ -1,0 +1,15 @@
+/*
+ * File: 10-add.c
+ * Auth: Lawal
+ */
+#include "main.h"
+/**
+ * add - add two integers
+ * @num: Caracters to add
+ *
+ * Return: Always return the added number
+ */
+int add(int num, int num1)
+{
+	return (num + num1);
+}
