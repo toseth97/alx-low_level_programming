@@ -12,12 +12,12 @@ int _islower(int c)
 {
 	if (c >= 'a' && c <= 'z')
 	{
-		//return 1 for lowercase
+		/*return 1 for lowercase*/
 		return 1;
 	}
 	else
 	{
-		//return 0 for for upper
+		/*return 0 for for upper*/
 		return (0);
 	}
 }
