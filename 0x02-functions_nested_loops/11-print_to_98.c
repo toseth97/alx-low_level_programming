@@ -6,7 +6,7 @@
 #include "main.h"
 
 /**
- * print_to98 - prints number up until 98
+ * print_to_98 - prints number up until 98
  * @n: Starting value
  *
  */
