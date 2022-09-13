@@ -1,12 +1,13 @@
-/**
- * main - Enty point
+/*
+ * File: 3-islower.c
+ * Auth: Lawal
  */
 #include "main.h"
 /**
- * islower - Checks if a character is lowercase.
- * c: The character to be checked.
+ * _islower - Checks if a character is lowercase.
+ * @c: The character to be checked.
  *
- * return: 1 if character is lowercase, 0 otherwise.
+ * Return: 1 if character is lowercase, 0 otherwise.
  */
 int _islower(int c)
 {
