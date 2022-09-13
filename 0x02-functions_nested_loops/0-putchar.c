@@ -6,7 +6,7 @@
  * Return: Thi is always 0
  */
 
-int print()
+int main(void)
 {
 	_putchar('_');
 	_putchar('p');
