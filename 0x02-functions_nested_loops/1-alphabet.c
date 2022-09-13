@@ -10,6 +10,6 @@ void print_alphabet()
 {
 	for (int i = 'a'; i <= 'z'; i++)
 	{
-		_putchar("%s\n",&i);
+		_putchar("%s",&i);
 	}
 }
