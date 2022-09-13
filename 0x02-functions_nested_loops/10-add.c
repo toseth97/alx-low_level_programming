@@ -6,7 +6,7 @@
 /**
  * add - add two integers
  * @num: Caracters to add
- * @num: second character
+ * @num1: second character
  *
  * Return: Always return the added number
  */
