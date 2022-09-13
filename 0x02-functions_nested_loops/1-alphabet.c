@@ -3,6 +3,8 @@
 /**
  * main - Entry point
  *
+ * Description: This is the description
+ *
  * Return: Always 0 (Success)
  */
 
