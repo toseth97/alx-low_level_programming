@@ -1,17 +1,12 @@
-/*
- * File: 0-putchar.c
- *
- *
- */
-
 #include "main.h"
 
 /**
- * main - Prints "_putchar" followed by a new line.
+ * Main: we did some shit here
  *
- * Return: Always 0.
+ * Return: Thi is always 0
  */
-int main(void)
+
+int print()
 {
 	_putchar('_');
 	_putchar('p');
