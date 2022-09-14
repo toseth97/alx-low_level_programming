@@ -3,6 +3,7 @@
  * Auth: Lawal
  */
 
+#include <stdio.h>
 #include "main.h"
 
 /**
