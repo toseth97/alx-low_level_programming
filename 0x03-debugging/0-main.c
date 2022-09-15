@@ -6,9 +6,9 @@
 #include "main.h"
 
 /**
- * main - test function that prints
+ * @main - test function that prints
  *
- * Return: 0
+ * Return: Always returns 0 (Success)
  */
 
 int main(void)
