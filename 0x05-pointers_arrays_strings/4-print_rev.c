@@ -17,6 +17,6 @@ void print_rev(char *s)
 		coin++;
 
 	for (j = (coin - 1); j >= 0; j--)
-		_putchar(s[n]);
+		_putchar(s[j]);
 	_putchar('\n');
 }
