@@ -1,16 +1,17 @@
 #include "main.h"
 
 /**
- * _strncat - function that contatenate two string with a speific index
+ * _strncat - function that contatenate two string with a speific inde
  * @dest: destination
  * @src: Source
  * @n: Index max
- * Return: returns dest
+ * Return: returns desti
  */
 
 char *_strncat(char *dest, char *src, int n)
 {
 	int d = 0;
+	int s = 0;
 
 	while (dest[d] != '\0')
 		d++;
@@ -20,6 +21,8 @@ char *_strncat(char *dest, char *src, int n)
 		s++;
 		d++;
 	}
+
+	dest[d] = '\0';
 
 	return (dest);
 }
