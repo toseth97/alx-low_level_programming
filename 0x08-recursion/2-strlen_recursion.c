@@ -3,6 +3,7 @@
 /**
  * _strlen_recursion - Entry
  * @s: String input
+ * Return: integer
  */
 
 
