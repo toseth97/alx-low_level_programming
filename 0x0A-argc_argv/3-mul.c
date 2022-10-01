@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 {
 	int i, res = 1;
 
-	if (argv != 3)
+	if (argc != 3)
 	{
 		printf("%s\n", "Error");
 		return (1);
