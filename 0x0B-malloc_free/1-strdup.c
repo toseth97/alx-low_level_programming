@@ -12,15 +12,15 @@ char *_strdup(char *str)
 	char *ar = NULL;
 	int i;
 	int len = 0;
-	
+
 	while (str[len] != '\0')
 		len++;
-	
+
 	len += 1;
 
 	ar = malloc(len * sizeof(str));
 
-	if (len != 0 && ar != NULL)
+	if (len != 0 && ar != NULL && str != NULL)
 	{
 		for (i = 0; i < len; i++)
 			ar[i] = str[i];
