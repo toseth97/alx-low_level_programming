@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "main.h"
 /**
  * string_nconcat - len of 1st str, len of 2nd str, if n < 2nd, 2nd = n
