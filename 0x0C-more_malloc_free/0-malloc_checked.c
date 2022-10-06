@@ -1,7 +1,9 @@
 #include "main.h"
+#include <stdlib.h>
+
 
 /**
- * malloc_check - memorry allocation
+ * malloc_checked - memorry allocation
  * @b: int size
  * Return: Returns a pointer
  */
@@ -18,4 +20,4 @@ void *malloc_checked(unsigned int b)
 		exit(98);
 
 	return (m);
-}	
+}
