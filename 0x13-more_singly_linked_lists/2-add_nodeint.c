@@ -8,18 +8,19 @@
 
 listint_t *add_nodeint(listint_t **head, const int n)
 {
-	int i = 0;
 
-	if (head == NULL || head == NULL)
-		return (0);
+	listint_t *temp;
 
-	listint_t *temp = malloc(sizeof(listint_t));
-	
-	if (temp != NULL)
-	{
-		temp->n = n;
-		temp->next = *head;
-		*head = temp;
-	}
+	if (head == NULL)
+		return (NULL);
+
+	temp = malloc(sizeof(listint_t));
+	if (temp == NULL)
+		return (NULL);
+
+	temp->n = n;
+	temp->next = *head;
+	*head = temp;
+
 	return (temp);
 }
