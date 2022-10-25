@@ -1,23 +1,21 @@
 #include "lists.h"
-
 /**
- * listint_len - Function to get the length of nodes
- * @h: structure pointer, It points to the base address
- * Return: always return the len of the node.
+ * listint_len - Entry Point
+ * @h: head
+ * Return: 0
  */
-
-
 size_t listint_len(const listint_t *h)
 {
-	int i;
+	int count = 0;
 
 	if (h == NULL)
 		return (0);
+
 	while (h != NULL)
 	{
-		i++;
+		count++;
 		h = h->next;
 	}
 
-	return (i);
+	return (count);
 }
