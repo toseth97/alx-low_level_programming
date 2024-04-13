@@ -1,24 +1,25 @@
-/*
- * File: 7-print_last_digit.c
- * Auth: Lawal
- */
 #include "main.h"
+
 /**
- * print_last_digit - Prints out last digit.
- * @n: The number to check
- *
- * Return: return last character.
+ * print_last_digit - print the last digit of a number
+ * @x: int type number
+ * Return: return value of last digit
  */
-int print_last_digit(int n)
+
+int print_last_digit(int x)
 {
-	int last = n % 10;
+	int y;
 
-	if (last < 0)
+	if (x < 0)
 	{
-		last *= -1;
+		y = -1 * (x % 10);
+		_putchar(y + '0');
+		return (y);
 	}
-
-	_putchar(last + '0');
-
-	return (last);
+	else
+	{
+		y = x % 10;
+		_putchar(y + '0');
+		return (y);
+	}
 }

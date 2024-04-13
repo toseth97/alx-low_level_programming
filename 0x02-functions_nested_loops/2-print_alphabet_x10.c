@@ -1,24 +1,20 @@
-/*
- * File: 1-alphabet.c
- * Auth: Lawal
- */
-
-
 #include "main.h"
 
 /**
- * print_alphabet_x10 - prints the alphabet
+ * print_alphabet_x10 - Print alphabet in lowercase 10 times
+ * Return 0
  */
+
 void print_alphabet_x10(void)
 {
-	int i = 0;
-	char letter = 'a';
+	char c;
+	int count;
 
-	for (i = 0; i < 10; i++)
+	for (count = 0; count < 10; count++)
 	{
-		for (letter = 'a'; letter <= 'z'; letter++)
+		for (c = 'a'; c <= 'z'; c++)
 		{
-			_putchar(letter);
+			_putchar(c);
 		}
 		_putchar('\n');
 	}

@@ -1,1 +1,1 @@
-Read me, but God abeg, let this code run
+Solutions to debugging tasks

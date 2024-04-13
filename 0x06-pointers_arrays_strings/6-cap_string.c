@@ -1,35 +1,39 @@
 #include "main.h"
 
 /**
- * cap_string - function to capitalize all words
- * @n: String input
- * Return: capitalized letter
+ * cap_string - capitalize all words of a string
+ * @str: string
+ * Return: `str`
  */
 
-char *cap_string(char *n)
+char *cap_string(char *str)
 {
-	int i, x;
-	int cap = 32;
-	int separator[] = {',', ';', '.', '?', '"', '(',
-		')', '{', '}', ' ', '\n', '\t'};
+	int i, c;
+	int trigger;
+	char nots[] = ",;.!?(){}\n\t\" ";
 
-	for (i = 0; n[i] != '\0'; i++)
+	for (i = 0, trigger = 0; str[i] != '\0'; i++)
 	{
-		if (n[i] >= 'a' && n[i] <= 'z')
+		if (str[0] > 96 && str[0] < 123)
+			trigger = 1;
+		for (c = 0; nots[c] != '\0'; c++)
 		{
-			n[i] = n[i] - cap;
+			if (nots[c] == str[i])
+				trigger = 1;
 		}
-		cap = 0;
 
-		for (x = 0; x <= 12; x++)
+		if (trigger)
 		{
-			if (n[i] == separator[x])
+			if (str[i] > 96 && str[i] < 123)
 			{
-				x = 12;
-				cap = 32;
+				str[i] -= 32;
+				trigger = 0;
 			}
+			else if (str[i] > 64 && str[i] < 91)
+				trigger = 0;
+			else if (str[i] > 47 && str[i] < 58)
+				trigger = 0;
 		}
 	}
-
-	return (n);
+	return (str);
 }

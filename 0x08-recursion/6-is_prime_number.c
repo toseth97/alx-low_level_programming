@@ -1,33 +1,57 @@
 #include "main.h"
-int prime_check(int n, int i);
+
 /**
- * is_prime_number - execute prime factor
- * @n: input to check
- * Return: Alwys o;
+ * is_prime_number - determine if a number is a prime number
+ * @n: int number
+ * Return: 1 if prime, 0 otherwise
  */
 
 int is_prime_number(int n)
 {
-	if (n <= 1)
+	int prime_number(int divider, int n);
+
+	int divider = 2;
+
+	if (n < 2)
+	{
 		return (0);
-	else if (prime_check(n, n / 2) > 0)
-		return (1);
-	return (0);
+	}
+	if (n % n == 0 || n % 1 == 0)
+	{
+		if (prime_number(divider, n) != 0)
+		{
+			return (1);
+		}
+		else
+		{
+			return (0);
+		}
+	}
 }
 
 /**
- * prime_check - check prime
- * @n: input
- * @i: counter
- * Return: success
+ * prime_number - helper function, recursive steps taken
+ * @n: number given to original function is_prime_number
+ * @divider: incrementer divisor
+ * Return: 0 if not prime, 1 if prime
  */
 
-int prime_check(int n, int i)
+int prime_number(int divider, int n)
 {
-	if (i == 1)
-		return (1);
-	if (n % i == 0)
-		return (0);
+	if (divider < n)
+	{
+		if (n % divider == 0)
+		{
+			return (0);
+		}
+		else
+		{
+			++divider;
+			return (prime_number(divider, n));
+		}
+	}
 	else
-		return (prime_check(n, i - 1));
+	{
+		return (1);
+	}
 }

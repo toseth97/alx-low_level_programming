@@ -1,24 +1,15 @@
-/*
- * File: 4-isalpha.c
- * Auth: Lawal
- */
 #include "main.h"
+
 /**
- * _isalpha - Checks if a character is letter.
- * @c: The character to be checked.
- *
- * Return: 1 if character is letter, 0 otherwise
+ * _isalpha - Check if character is an alphabetic character.
+ * @c: type int character
+ * Return: 1 if letter, lowercase or uppercase, and 0 otherwise
  */
+
 int _isalpha(int c)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-	{
-		/*return 1 for letters*/
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 		return (1);
-	}
 	else
-	{
-		/*return 0 for non letter*/
 		return (0);
-	}
 }

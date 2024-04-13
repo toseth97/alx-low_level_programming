@@ -1,51 +1,52 @@
 #include "main.h"
-int lengthc(char *s);
-int palindrome(char str[], int st, int end);
 
 /**
- * is_palindrome - entry
- * @s: input
- * Return: Success
+ * is_palindrome - check if a string is a palindrome
+ * @s: char array string
+ * Return: 1 if palindrome, 0 if not
  */
 
 int is_palindrome(char *s)
 {
-	int len;
+	int get_length(char *s);
+	int my_pal(char *s, int l);
+	int length;
 
-	len = lengthc(s);
-	if (len == 0)
-		return (1);
-	return (palindrome(s, 0, len - 1));
+	length = get_length(s) - 1;
+
+	return (my_pal(s, --length));
 }
 
 /**
- * lengthc - find leght of string
- * @s: input
- * Return: length
+ * get_length - gets length of string
+ * @s: string
+ * Return: return length of string
  */
 
-int lengthc(char *s)
+int get_length(char *s)
 {
-	if (*s != '\0')
-		return (1 + lengthc(s + 1));
-	return (0);
+	if (*s == '\0')
+		return (1);
+	else
+		return (1 + get_length(++s));
 }
 
 /**
- * palindrome -  check start and end string
- * @str: string
- * @st: start
- * @end: edn of string
- * Return: return palindrome
+ * my_pal - recursive check of palindrome
+ * @s: string
+ * @l: length of string
+ * Return: 1 if palindrome, 0 if not
  */
 
-int palindrome(char str[], int st, int end)
+int my_pal(char *s, int l)
 {
-	if (st >= end)
-		return (1);
-	if (str[st] != str[end])
+	if (*s == *(s + l))
+	{
+		if (l <= 0)
+			return (1);
+		else
+			return (my_pal(++s, l - 2));
+	}
+	else
 		return (0);
-	if (st <= end || st < end + 1)
-		return (palindrome(str, st + 1, end - 1));
-	return (1);
 }

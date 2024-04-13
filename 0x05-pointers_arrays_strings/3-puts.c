@@ -1,9 +1,11 @@
 #include "main.h"
+
 /**
- * _puts - a function that prints a string
- * @str: string input
- * Return: string
+ * _puts - print a string to stdout
+ * @str: char array string type
+ * Description: Can only use _putchar
  */
+
 void _puts(char *str)
 {
 	int i;

@@ -1,23 +1,21 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success)
+ * main - main block
+ * Description: Use `putchar` function to print the alphabet in lowercase.
+ * Return: 0
  */
 
 int main(void)
 {
-	char small;
+	char c = 'a';
 
-	for (small = 'a'; small <= 'z'; small++)
+	while (c <= 'z')
 	{
-		putchar(small);
+		putchar(c);
+		c++;
 	}
 
-	printf("\n");
-
+	putchar('\n');
 	return (0);
 }

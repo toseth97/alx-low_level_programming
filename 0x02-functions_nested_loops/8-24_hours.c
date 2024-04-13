@@ -1,24 +1,23 @@
-/*
- * File: 8-24_hours.c
- * Auth: Lawal
- */
 #include "main.h"
+
 /**
- * jack_bauer - count 24hours.
+ * jack_bauer - Print every minute of the day of Jack Bauer
+ * Description: Start from 00:00 to 23:59
  */
+
 void jack_bauer(void)
 {
-	int hours, minutes;
+	int x, y;
 
-	for (hours = 0; hours <= 23; hours++)
+	for (x = 0; x < 24; x++)
 	{
-		for (minutes = 0; minutes <= 59; minutes++)
+		for (y = 0; y < 60; y++)
 		{
-			_putchar((hours / 10) + '0');
-			_putchar((hours % 10) + '0');
+			_putchar((x / 10) + '0');
+			_putchar((x % 10) + '0');
 			_putchar(':');
-			_putchar((minutes / 10) + '0');
-			_putchar((minutes % 10) + '0');
+			_putchar((y / 10) + '0');
+			_putchar((y % 10) + '0');
 			_putchar('\n');
 		}
 	}

@@ -1,57 +1,45 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "search_algos.h"
+
 /**
-  * binary_search - searches for a value in an array of integers using
-  * the binary search algorithm
-  * assumes that the array is sorted in asc order
-  * also assumes that value won't appear twice in the array
-  * prints the array being searched every time it changes.
-  * @array: pointer to the first element of the array to search in
-  * @size: number of elements in array
-  * @value: value to search for
-  * Return: return index of value, if value is not present in array or
-  * if array is NULL, returns -1
-  */
+ * binary_search - searches for a value in an integer array using a binary
+ * search algorithm, not guaranteed to return lowest index if `value` appears
+ * twice in `array`
+ * @array: pointer to first element of array to seach
+ * @size: number of elements in array
+ * @value: value to search for
+ *
+ * Return: index containing `value`, or -1 if `value` not found or
+ * `array` is NULL
+ */
+
 int binary_search(int *array, size_t size, int value)
 {
-	size_t i;
-	size_t lowerbound = 0;
-	size_t upperbound = size - 1;
-	size_t midpoint = -1;
-	int index = -1;
+	int low, mid, high;
+	int x;
 
 	if (array == NULL)
-		return (-1);
-	while (lowerbound <= upperbound)
 	{
-		midpoint = lowerbound + (upperbound - lowerbound) / 2;
-		printf("Searching in array: ");
-		for (i = lowerbound; i <= upperbound; i++)
-		{
-			if (i == upperbound)
-			{
-				printf("%d\n", array[upperbound]);
-				break;
-			}
-			printf("%d, ", array[i]);
-		}
-		if (array[midpoint] == value)
-		{
-			index = midpoint;
-			break;
-		}
-		else
-		{
-			if (array[midpoint] < value)
-			{
-				lowerbound = midpoint + 1;
-			}
-			else
-			{
-				upperbound = midpoint - 1;
-			}
-		}
+		return (-1);
 	}
-	return (index);
+
+	low = 0;
+	high = size - 1;
+
+	while (low <= high)
+	{
+		mid = (low + high) / 2;
+
+		printf("Searching in array: ");
+		for (x = low; x <= high; x++)
+			printf("%i%s", array[x], x == high ? "\n" : ", ");
+
+		if (array[mid] < value)
+			low = mid + 1;
+		else if (array[mid] > value)
+			high = mid - 1;
+		else
+			return (mid);
+	}
+
+	return (-1);
 }

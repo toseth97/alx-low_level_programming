@@ -1,22 +1,19 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success)
+ * main - main block
+ * Description: Print the alphabet in reverse order in lowercase.
+ * Return: 0
  */
 
 int main(void)
 {
-	char letter;
+	char c;
 
-	for (letter = 'z'; letter >= 'a'; letter--)
+	for (c = 'z'; c >= 'a'; c--)
 	{
-		putchar(letter);
+		putchar(c);
 	}
-
 	putchar('\n');
-
 	return (0);
 }

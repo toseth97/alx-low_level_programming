@@ -1,34 +1,30 @@
 #include "main.h"
 
 /**
- * rot13 - Entry point
+ * rot13 - encodes a string in rot13
+ * @s: string to be encoded
  *
- * One if, WO loops only
- *
- * @n: input
- *
- * Return: decrypted string
+ * Return: the resulting string
  */
 
-char *rot13(char *n)
+char *rot13(char *s)
 {
 	int i, j;
 
-	char first[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char second[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghujklm";
+	char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char b[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-
-	for (i = 0; n[i] != '\0'; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (j = 0; first[j] != '\0'; j++)
+		for (j = 0; a[j] != '\0'; j++)
 		{
-			if (n[i] == first[j])
+			if (s[i] == a[j])
 			{
-				n[i] = second[j];
+				s[i] = b[j];
 				break;
 			}
 		}
 	}
 
-	return (n);
+	return (s);
 }

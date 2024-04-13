@@ -1,47 +1,44 @@
 #include "main.h"
-#include <stdlib.h>
+#include <unistd.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <unistd.h>
 #include <fcntl.h>
+#include <stdlib.h>
 
 /**
- * read_textfile - fuction that read a text file and print it out the POSIX std
- * out
- * @filename: body of text to print.
- * @letters: max char to print.
- * Return: number of chars printed.
+ * read_textfile - reads a text file and prints it to the POSIX standard output
+ * @filename: name of the file to read
+ * @letters: number of letters it should read and print
+ *
+ * Return: actual number of letters it could read and print
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd, err, rd;
-	char *buf;
+	int fd;
+	ssize_t lenr, lenw;
+	char *buffer;
 
-	fd = err = rd = 0;
-	if (!filename || !letters)
+	if (filename == NULL)
 		return (0);
 	fd = open(filename, O_RDONLY);
-	if (fd < 0)
+	if (fd == -1)
 		return (0);
-
-	buf = malloc(sizeof(char) * letters + 1);
-	if (!buf)
-		return (0);
-	rd = read(fd, buf, letters);
-	if (rd < 0)
+	buffer = malloc(sizeof(char) * letters);
+	if (buffer == NULL)
 	{
-		free(buf);
+		close(fd);
 		return (0);
 	}
-	buf[letters] = '\0';
-	err = write(STDOUT_FILENO, buf, rd);
-	if (err <= 0)
-	{
-		free(buf);
-		return (0);
-	}
-
-	free(buf);
+	lenr = read(fd, buffer, letters);
 	close(fd);
-	return (rd);
+	if (lenr == -1)
+	{
+		free(buffer);
+		return (0);
+	}
+	lenw = write(STDOUT_FILENO, buffer, lenr);
+	free(buffer);
+	if (lenr != lenw)
+		return (0);
+	return (lenw);
 }

@@ -1,30 +1,28 @@
 #include "main.h"
 
 /**
- * leet - entry
- * ONE if, Two loops only;
- * @n: input
+ * leet - encodes a string in 1337
+ * @s: string to be encoded
  *
- * Return: 0;
+ * Return: the resulting string;
  */
-
-char *leet(char *n)
+char *leet(char *s)
 {
-	int i, x;
-	int find[] = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
-	int change[] = {'4', '3', '0', '7', '1'};
+	int i, j;
 
-	for (i = 0; n[i] != '\0'; i++)
+	char *a = "aAeEoOtTlL";
+	char *b = "4433007711";
+
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (x = 0; x <= 9; x++)
+		for (j = 0; j < 10; j++)
 		{
-			if (n[i] == find[x])
+			if (s[i] == a[j])
 			{
-				n[i] = change[x / 2];
-				x = 9;
+				s[i] = b[j];
 			}
 		}
 	}
 
-	return (n);
+	return (s);
 }
